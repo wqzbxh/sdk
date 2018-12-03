@@ -27,7 +27,7 @@ if(!empty($_POST['ii']) && $_POST['er'] && $_POST['cl'])
     $startTime = strtotime($str);
     $timekey = (string)$startTime+1;
     $solekey = $iMei.$encipher.$channel.$timekey;
-    $insertSql = "replace into sdkstatistics(imei,version,encipher,brand,model,systemversion,internetmode,distinguishability,channel,android_id,createtime,timekey,solekey) values ('".$iMei."','".$version."','".$encipher."','".$brand."','".$model."','".$systemVersion."','".$internetModel."' ,'".$distinguishability."','".$channel."','".$androidId."',$createtime,'".$timekey."','".$solekey."')";
+    $insertSql = "replace into sdkstatistics_u(imei,version,encipher,brand,model,systemversion,internetmode,distinguishability,channel,android_id,createtime,timekey,solekey) values ('".$iMei."','".$version."','".$encipher."','".$brand."','".$model."','".$systemVersion."','".$internetModel."' ,'".$distinguishability."','".$channel."','".$androidId."',$createtime,'".$timekey."','".$solekey."')";
     $insertResult = $db->Query($insertSql,3);
     var_dump($insertResult);
 }

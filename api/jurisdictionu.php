@@ -21,7 +21,7 @@ if($_POST['uuid'] && $_POST['imei'] && $_POST['channel']){
     $startTime = strtotime($str);
     $timekey = (string)$startTime+1;
     $solekey = $uuid.$imei.$channel.$timekey;
-    $insertSql = "replace into jurisdiction(packname,uuid,imei,is_suspend,channel,sdkversion,createtime,timekey,solekey) values('".$packname."','".$uuid."','".$imei."','".$isSuspend."','".$channel."','".$sdkversion."',$createtime,'".$timekey."','".$solekey."')";
+    $insertSql = "replace into jurisdiction_u(packname,uuid,imei,is_suspend,channel,sdkversion,createtime,timekey,solekey) values('".$packname."','".$uuid."','".$imei."','".$isSuspend."','".$channel."','".$sdkversion."',$createtime,'".$timekey."','".$solekey."')";
     $insertResult = $db->Query($insertSql,3);
 
 }
